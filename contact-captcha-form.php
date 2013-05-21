@@ -3,7 +3,7 @@
  * Plugin Name: Contact Captcha Form
  * Plugin URI: http://wellrootedmedia.com/?p=1175
  * Description: This is a simple contact form with a captcha
- * Version: 1.1
+ * Version: 1.2
  * Author: Well Rooted Media
  * Author URI: http://wellrootedmedia.com
  * License: GPL2
