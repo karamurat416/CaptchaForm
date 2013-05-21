@@ -117,16 +117,15 @@ function ccf_settings_page() {
 /*
  * Register css for forms
  */
-wp_register_style( 'contactCss', plugins_url( 'css/contact.css' , __FILE__ ) );
-wp_register_style( 'registerCss', plugins_url( 'css/register.css' , __FILE__ ) );
+wp_register_style( 'stylesheet', plugins_url( 'css/stylesheet.css' , __FILE__ ) );
 
 function cff_contact_form() {
-    wp_enqueue_style( 'contactCss' );
+    wp_enqueue_style( 'stylesheet' );
     include( plugin_dir_path( __FILE__ ) . 'contact-form.php');
 }
 
 function cff_register_form() {
-    wp_enqueue_style( 'registerCss' );
+    wp_enqueue_style( 'stylesheet' );
     include( plugin_dir_path( __FILE__ ) . 'register-form.php');
 }
 

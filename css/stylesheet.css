@@ -1,4 +1,3 @@
-
 .cffWrapper {
     margin: 5px !important;
 }
@@ -30,7 +29,9 @@
     width: auto !important;
 }
 
-.cffWrapper button, input, textarea {
+.cffWrapper button,
+.cffWrapper input,
+.cffWrapper textarea {
     border: 1px solid #ccc;
     border-radius: 3px;
     font-family: inherit;
