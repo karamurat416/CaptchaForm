@@ -92,32 +92,6 @@ function ccf_settings_page() {
         <br />
         <input type="text" value="[contact_captcha form=contact]" size="30" />
     </p>
-<!--<div class="wrap">-->
-<!--    <h2>--><?php //_e('CFF Plugin Options', 'CFF-plugin'); ?><!--</h2>-->
-<!---->
-<!--    <form method="post" accept="options.php">-->
-<!--        --><?php //settings_fields( 'cff-setting-group' ); ?>
-<!--        <table class="form-table">-->
-<!---->
-<!--            <tr valign="top">-->
-<!--                <th scope="row">--><?php //_e('Name', 'CFF-plugin' ); ?><!--</th>-->
-<!--                <td><input type="text" name="cff-contact-name" value="--><?php //echo get_option( 'cff-contact-name' ); ?><!--" /></td>-->
-<!--            </tr>-->
-<!---->
-<!--            <tr valign="top">-->
-<!--                <th scope="row">--><?php //_e('Email', 'CFF-plugin' ); ?><!--</th>-->
-<!--                <td><input type="text" name="cff-contact-email" value="--><?php //echo get_option( 'cff-contact-email' ); ?><!--" /></td>-->
-<!--            </tr>-->
-<!---->
-<!--            <tr valign="top">-->
-<!--                <th scope="row">--><?php //_e('URL', 'CFF-plugin' ); ?><!--</th>-->
-<!--                <td><input type="text" name="cff-contact-website" value="--><?php //echo get_option( 'cff-contact-website' ); ?><!--" /></td>-->
-<!--            </tr>-->
-<!---->
-<!--        </table>-->
-<!--        <p class="submit"><input type="submit" class="button-primary" value="--><?php //_e('Save Changes', 'CFF-plugin' );?><!--"/></p>-->
-<!--    </form>-->
-<!--</div>-->
 <?php
 }
 
