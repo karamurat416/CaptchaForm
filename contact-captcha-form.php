@@ -85,32 +85,39 @@ function ccf_register_settings() {
 
 function ccf_settings_page() {
 ?>
-<div class="wrap">
-    <h2><?php _e('CFF Plugin Options', 'CFF-plugin'); ?></h2>
-
-    <form method="post" accept="options.php">
-        <?php settings_fields( 'cff-setting-group' ); ?>
-        <table class="form-table">
-
-            <tr valign="top">
-                <th scope="row"><?php _e('Name', 'CFF-plugin' ); ?></th>
-                <td><input type="text" name="cff-contact-name" value="<?php echo get_option( 'cff-contact-name' ); ?>" /></td>
-            </tr>
-
-            <tr valign="top">
-                <th scope="row"><?php _e('Email', 'CFF-plugin' ); ?></th>
-                <td><input type="text" name="cff-contact-email" value="<?php echo get_option( 'cff-contact-email' ); ?>" /></td>
-            </tr>
-
-            <tr valign="top">
-                <th scope="row"><?php _e('URL', 'CFF-plugin' ); ?></th>
-                <td><input type="text" name="cff-contact-website" value="<?php echo get_option( 'cff-contact-website' ); ?>" /></td>
-            </tr>
-
-        </table>
-        <p class="submit"><input type="submit" class="button-primary" value="<?php _e('Save Changes', 'CFF-plugin' );?>"/></p>
-    </form>
-</div>
+    <h1>How to use the contact form plugin</h1>
+    <p>At the moment, this is a generic form, and later will have an integration system to add/remove as many options for inputs, textarea's, etc...</p>
+    <p>
+        To use this plugin, all you have to do is create a new page and add the following code in the content area.
+        <br />
+        <input type="text" value="[contact_captcha form=contact]" size="30" />
+    </p>
+<!--<div class="wrap">-->
+<!--    <h2>--><?php //_e('CFF Plugin Options', 'CFF-plugin'); ?><!--</h2>-->
+<!---->
+<!--    <form method="post" accept="options.php">-->
+<!--        --><?php //settings_fields( 'cff-setting-group' ); ?>
+<!--        <table class="form-table">-->
+<!---->
+<!--            <tr valign="top">-->
+<!--                <th scope="row">--><?php //_e('Name', 'CFF-plugin' ); ?><!--</th>-->
+<!--                <td><input type="text" name="cff-contact-name" value="--><?php //echo get_option( 'cff-contact-name' ); ?><!--" /></td>-->
+<!--            </tr>-->
+<!---->
+<!--            <tr valign="top">-->
+<!--                <th scope="row">--><?php //_e('Email', 'CFF-plugin' ); ?><!--</th>-->
+<!--                <td><input type="text" name="cff-contact-email" value="--><?php //echo get_option( 'cff-contact-email' ); ?><!--" /></td>-->
+<!--            </tr>-->
+<!---->
+<!--            <tr valign="top">-->
+<!--                <th scope="row">--><?php //_e('URL', 'CFF-plugin' ); ?><!--</th>-->
+<!--                <td><input type="text" name="cff-contact-website" value="--><?php //echo get_option( 'cff-contact-website' ); ?><!--" /></td>-->
+<!--            </tr>-->
+<!---->
+<!--        </table>-->
+<!--        <p class="submit"><input type="submit" class="button-primary" value="--><?php //_e('Save Changes', 'CFF-plugin' );?><!--"/></p>-->
+<!--    </form>-->
+<!--</div>-->
 <?php
 }
 
