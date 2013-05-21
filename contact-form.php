@@ -40,8 +40,6 @@ ob_start();
 
                 <label for="phoneNumber"<?php valdidateField('phoneNumber', $missingFields ); ?>><?php _e( 'Phone Number' ); ?></label>
                 <input type="text" name="phoneNumber" id="phoneNumber" value="<?php setValue( "phoneNumber" ) ?>" placeholder="123-456-7890" />
-                <div class="clr"></div>
-                <span style="font-size: 9px;">(valid phone number = 123-456-7890)</span>
 
                 <br />
 
@@ -105,10 +103,10 @@ ob_start();
         }
 
         if ( $errorMessages ) {
-//            echo "<p>there was a problem with the form you sent:</p>";
-//            echo "<ul>";
-//            foreach ( $errorMessages as $errorMessage ) echo "<li class='error'>$errorMessage</li>";
-//            echo "</ul>";
+            echo "<p>there was a problem with the form you sent:</p>";
+            echo "<ul>";
+            foreach ( $errorMessages as $errorMessage ) echo "<li class='error'>$errorMessage</li>";
+            echo "</ul>";
             displayForm( array() );
         } else {
             //$to = get_option('admin_email');
@@ -119,9 +117,10 @@ ob_start();
             $message = $_POST['message'];
             $url = ($siteVerified) ? " and website is, " . $siteVerified : "";
             $subject = 'Email from Captcha Contact Form';
-            $message = $firstName . " has sent you a message, \r\n" .
-                htmlspecialchars( $message ) .
-                " \r\n contact " . $firstName." by phone " . $phoneNumber . "\r\n" .$url;
+//            $message = $firstName . " has sent you a message, \r\n" .
+//                htmlspecialchars( $message ) .
+//                " \r\n contact " . $firstName." by phone " . $phoneNumber . "\r\n" .$url;
+            $message = message($firstName, $from);
             $headers = "From: " . $from . " \r\n" . 'Reply-To: ' . $from . "\r\n" . 'X-Mailer: PHP/' . phpversion();
             $mail = mail($to, $subject, $message, $headers);
 
@@ -136,6 +135,26 @@ ob_start();
         ?>
         <h2>Thank you for your time <?php echo $_POST['firstName']; ?>, we will get back shortly.</h2>
         <?php
+    }
+
+    function message($fname, $email) {
+
+        $optionRawArr = array(
+            get_option('firstName'),
+            get_option('email')
+        );
+
+        $replacementOptArr = array(
+            $fname,
+            $email
+        );
+
+        $rawContent  = get_option('emailTemplate');
+        $rawOptions = $optionRawArr;
+        $newOptions = $replacementOptArr;
+
+        $newPhrase = str_replace($rawOptions, $newOptions, $rawContent);
+        return $newPhrase;
     }
 
     ?>

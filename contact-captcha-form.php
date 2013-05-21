@@ -60,30 +60,20 @@ function ccf_create_menu() {
  */
 function ccf_register_settings() {
     /*
-     * CFFContact Settings
+     * TODO: make this an array option
      */
-    register_setting( 'cff-setting-group', 'cff-contact-name' );
-    register_setting( 'cff-setting-group', 'cff-contact-email' );
-    register_setting( 'cff-setting-group', 'cff-contact-phone' );
-    register_setting( 'cff-setting-group', 'cff-contact-website' );
-    register_setting( 'cff-setting-group', 'cff-contact-message' );
-    register_setting( 'cff-setting-group', 'cff-contact-verify' );
+    register_setting( 'cff-settings-group', 'firstName' );
+    register_setting( 'cff-settings-group', 'email' );
 
-    /*
-     * CFFReservation Settings
-     */
-    register_setting( 'cff-setting-group', 'cff-register-select' );
-    register_setting( 'cff-setting-group', 'cff-register-name' );
-    register_setting( 'cff-setting-group', 'cff-register-email' );
-    register_setting( 'cff-setting-group', 'cff-register-phone' );
-    register_setting( 'cff-setting-group', 'cff-register-date' );
-    register_setting( 'cff-setting-group', 'cff-register-note' );
-    register_setting( 'cff-setting-group', 'cff-register-verify' );
+    register_setting( 'cff-settings-group', 'emailTemplate' );
 }
 
 
 
 function ccf_settings_page() {
+    $firstName = get_option('firstName');
+    $email = get_option('email');
+    $emailTemplate = get_option('emailTemplate');
 ?>
     <h1>How to use the contact form plugin</h1>
     <p>At the moment, this is a generic form, and later will have an integration system to add/remove as many options for inputs, textarea's, etc...</p>
@@ -92,6 +82,34 @@ function ccf_settings_page() {
         <br />
         <input type="text" value="[contact_captcha form=contact]" size="30" />
     </p>
+
+    <div class="wrap">
+        <h2>Your Plugin Name</h2>
+
+        <form method="post" action="options.php">
+            <?php settings_fields( 'cff-settings-group' ); ?>
+            <?php //do_settings( 'cff-settings-group' ); ?>
+            <table class="form-table">
+                <tr valign="top">
+                    <th scope="row"><label for="firstName"><?php _e("First Name"); ?></label></th>
+                    <td><input type="text" name="firstName" id="firstName" value="<?php echo $firstName; ?>" /></td>
+                </tr>
+
+                <tr valign="top">
+                    <th scope="row"><label for="email"><?php _e("Email"); ?></label></th>
+                    <td><input type="text" name="email" id="email" value="<?php echo $email; ?>" /></td>
+                </tr>
+
+                <tr valign="top">
+                    <th scope="row"><label for="emailTemplate"><?php _e("Email Template"); ?></label></th>
+                    <td><textarea name="emailTemplate" id="emailTemplate" cols="50" rows="10"><?php echo $emailTemplate; ?></textarea></td>
+                </tr>
+            </table>
+
+            <?php submit_button(); ?>
+
+        </form>
+    </div>
 <?php
 }
 
