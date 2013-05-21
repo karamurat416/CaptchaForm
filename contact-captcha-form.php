@@ -1,7 +1,7 @@
 <?php
 /*
  * Plugin Name: Contact Captcha Form
- * Plugin URI: http://wellrootedmedia.com/plugins/contact-captcha-form/
+ * Plugin URI: http://wellrootedmedia.com/?p=1175
  * Description: This is a simple contact form with a captcha
  * Version: 1.1
  * Author: Well Rooted Media
