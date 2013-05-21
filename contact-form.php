@@ -109,8 +109,7 @@ ob_start();
             echo "</ul>";
             displayForm( array() );
         } else {
-            //$to = get_option('admin_email');
-            $to = "snolan760@gmail.com";
+            $to = get_option('admin_email');
             $from = $_POST['email'];
             $firstName = $_POST['firstName'];
             $phoneNumber = $_POST['phoneNumber'];
